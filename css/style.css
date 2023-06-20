@@ -3,14 +3,31 @@
 }
 
 /* Estilos para telas maiores */
-
+body {
+    background-color: #EEF9BF;
+}
 
 
 /* Estilos gerais aqui */
+.title{
+    /*font-family: roboto;*/
+    font-weight: 700;
+    font-size: 56px;
+    color: #75B79E;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
 .cardsbox{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
 }
 .card{
     background-color: #A7E9AF;
@@ -32,6 +49,13 @@ img{
 /* Estilos para telas menores */
 @media (max-width: 768px) {
     /* Estilos específicos para telas menores aqui */
+    .title{
+        font-size: 36px;
+    }
+
+    .cardsbox{
+        width: 150px;
+    }
 
     
   }

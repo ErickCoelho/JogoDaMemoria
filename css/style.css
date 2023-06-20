@@ -7,7 +7,26 @@
 
 
 /* Estilos gerais aqui */
+.cardsbox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.card{
+    background-color: #A7E9AF;
+    border-radius: 5px;
+    width: 117px;
+    height: 146px;
+    display: flex;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+img{
+    height: 100px;
+}
 
 
 /* Estilos para telas menores */

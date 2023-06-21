@@ -29,23 +29,54 @@ body {
     width: 80%;
     margin: auto;
 }
+
 .card{
-    background-color: #A7E9AF;
-    border-radius: 5px;
     width: 117px;
     height: 146px;
+    position: relative;
+}
+
+.face {
+    background-color: #A7E9AF;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
     display: flex;
     margin: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
 }
+
+.back-face{
+    transform: rotateY(180deg);
+}
+
+
+.card.open .back-face{
+    transform: rotateY(0deg);
+}
+
+
+.card.open .front-face{
+    transform: rotateY(-180deg);
+}
+
 
 img{
     height: 100px;
 }
 
-.turned{
+.back-face img{
+    width: 80%;
+    height: auto;
+}
+
+.open img{
     width: 80%;
 }
 

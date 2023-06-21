@@ -102,3 +102,12 @@ function openCard(elemento){
 }
 
 
+
+/**************************
+ * Falta:
+ * Add Contador
+ * Remover bug que da pra clicar numa carta enquanto as erradas não desviraram ainda
+ * Retirar alert e console.log
+ * Não permitir números ímpares ou fora do intervalo
+ * Reiniciar jogo quando a pessoa ganha (posso colocar até um botão de reiniciar)
+**************************/

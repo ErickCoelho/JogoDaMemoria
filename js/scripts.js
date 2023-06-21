@@ -11,27 +11,41 @@ function comparador(){
 
 cardsArray.sort(comparador);
 
-let cardsQuant = 8;
+let cardsQuant = 0;
 
-let gameCards = cardsArray.slice(0,cardsQuant/2);
-gameCards = gameCards.concat(gameCards).sort(comparador);
+let gameCards = [];
+
+function distributeCards(){
+    cardsQuant = prompt("Com quantas cartas deseja jogar?\n(escolha um valor par entre 4 e 14)");
+    const cardsBox = document.querySelector(".cardsbox");
+    
+    for(let i = 0; i < cardsQuant; i++){
+        cardsBox.innerHTML += `<div class="card ${i}" onclick="openCard(this)"><img class="cardimage" src="assets/front.png"></div>`;
+    }
+
+    gameCards = cardsArray.slice(0,cardsQuant/2);
+    gameCards = gameCards.concat(gameCards).sort(comparador);
+}
 
 //alert(gameCards);
-const cardsBox = document.querySelector(".cardsbox");
-for(let i = 0; i < cardsQuant; i++){
-    cardsBox.innerHTML += `<div class="card ${i}" onclick="openCard(this)"><img class="cardimage" src="assets/front.png"></div>`;
+
+function turnDownCards(){
+    cardOpened1.innerHTML = `<img class="cardimage" src="assets/front.png">`;
+    cardOpened2.innerHTML = `<img class="cardimage" src="assets/front.png">`;
 }
 
 
-function checkpair(){
+
+function checkPair(){
     if(cardOpened1.innerHTML !== cardOpened2.innerHTML){
-        cardOpened1.innerHTML = `<img class="cardimage" src="assets/front.png">`;
-        cardOpened2.innerHTML = `<img class="cardimage" src="assets/front.png">`;
+        setTimeout(turnDownCards,1000);
     }
     else{
         cardsCheckQuantity += 2;
+        if(cardsCheckQuantity == cardsQuant) alert("YOU WIN!!!");
     }
 
+    console.log("check pais");
     //if(cardsCheckQuantity === cardsQuant) alert("Fim de Jogo!");
 
 }
@@ -59,7 +73,7 @@ function openCard(elemento){
             click--;
             console.log("cardOpened1 = " + cardOpened1.innerHTML);
             console.log("cardOpened2 = " + cardOpened2.innerHTML);
-            setTimeout(checkpair,1000);
+            checkPair();
                 /*if(cardOpened1.innerHTML !== cardOpened2.innerHTML){
                     cardOpened1.innerHTML = `<img class="cardimage" src="assets/front.png">`;
                     cardOpened2.innerHTML = `<img class="cardimage" src="assets/front.png">`;

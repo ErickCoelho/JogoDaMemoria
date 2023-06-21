@@ -3,16 +3,94 @@
 }
 
 /* Estilos para telas maiores */
-
+body {
+    background-color: #EEF9BF;
+}
 
 
 /* Estilos gerais aqui */
+.title{
+    /*font-family: roboto;*/
+    font-weight: 700;
+    font-size: 56px;
+    color: #75B79E;
+    height: 140px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+}
+
+.cardsbox{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 80%;
+    margin: auto;
+}
+
+.card{
+    width: 117px;
+    height: 146px;
+    position: relative;
+}
+
+.face {
+    background-color: #A7E9AF;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    backface-visibility: hidden;
+    transition: all .5s;
+    transform-style: preserve-3d;
+}
+
+.back-face{
+    transform: rotateY(180deg);
+}
+
+
+.card.open .back-face{
+    transform: rotateY(0deg);
+}
+
+
+.card.open .front-face{
+    transform: rotateY(-180deg);
+}
+
+
+img{
+    height: 100px;
+}
+
+.back-face img{
+    width: 80%;
+    height: auto;
+}
+
+.open img{
+    width: 80%;
+}
 
 
 /* Estilos para telas menores */
-@media (max-width: 768px) {
+@media (max-width: 600px) {
     /* Estilos específicos para telas menores aqui */
+    .title{
+        font-size: 36px;
+    }
+
+    .cardsbox{
+        width: 150px;
+    }
 
     
   }

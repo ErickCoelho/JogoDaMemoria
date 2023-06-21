@@ -45,6 +45,10 @@ img{
     height: 100px;
 }
 
+.turned{
+    width: 80%;
+}
+
 
 /* Estilos para telas menores */
 @media (max-width: 600px) {

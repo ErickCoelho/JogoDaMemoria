@@ -19,5 +19,8 @@ for(let i = 0; i < cardsQuant; i++){
 
 function openCard(elemento){
     const test = elemento.classList.toString();
-    alert(test[test.length - 1]);
+    //alert(test[test.length - 1]);
+    const num = parseInt(test[test.length - 1]);
+    alert(gameCards[num]);
+    elemento.innerHTML = `<img class="cardimage turned" src="assets/${gameCards[num]}">`
 }

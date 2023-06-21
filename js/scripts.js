@@ -17,6 +17,7 @@ for(let i = 0; i < cardsQuant; i++){
     cardsBox.innerHTML += `<div class="card ${i}" onclick="openCard(this)"><img class="cardimage" src="assets/front.png"></div>`
 }
 
-function openCard(){
-
+function openCard(elemento){
+    const test = elemento.classList.toString();
+    alert(test[test.length - 1]);
 }
